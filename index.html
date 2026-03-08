@@ -1,9 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>City Cafe</title>
 
 <style>
@@ -11,11 +11,11 @@
 body{
 font-family:Arial;
 margin:0;
-background:#fafafa;
+background:#f5f5f5;
 }
 
 header{
-background:url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80") center/cover;
+background:url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1600") center/cover;
 color:white;
 text-align:center;
 padding:120px 20px;
@@ -63,7 +63,7 @@ gap:25px;
 background:white;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
@@ -87,10 +87,18 @@ color:#e65100;
 font-weight:bold;
 }
 
+.menu-list{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+line-height:2;
+}
+
 button{
 background:#ff6f00;
-color:white;
 border:none;
+color:white;
 padding:10px 15px;
 border-radius:5px;
 cursor:pointer;
@@ -100,38 +108,12 @@ button:hover{
 background:#e65100;
 }
 
-form{
-max-width:500px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:10px;
-}
-
-input,select,textarea{
-padding:10px;
-border-radius:5px;
-border:1px solid #ccc;
-}
-
-iframe{
-width:100%;
-height:300px;
-border:0;
-border-radius:10px;
-}
-
-.delivery{
-background:#fff3e0;
-padding:40px;
-text-align:center;
-}
-
 footer{
 background:#222;
 color:white;
 text-align:center;
 padding:20px;
+margin-top:40px;
 }
 
 </style>
@@ -140,28 +122,18 @@ padding:20px;
 <body>
 
 <header>
-
 <h1>City Cafe</h1>
-
 <p>Best Coffee • Tea • Snacks • Fast Delivery</p>
-
 </header>
 
 <nav>
-
 <a href="#coffee">Coffee</a>
-
 <a href="#tea">Tea</a>
-
 <a href="#snacks">Snacks</a>
-
-<a href="#meals">Meals</a>
-
-<a href="#order">Order</a>
-
-<a href="#contact">Contact</a>
-
+<a href="#menu">Food Menu</a>
 </nav>
+
+<!-- Coffee -->
 
 <section id="coffee">
 
@@ -170,7 +142,7 @@ padding:20px;
 <div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80">
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600">
 <div class="info">
 <h3>Espresso</h3>
 <p class="price">Rs 120</p>
@@ -179,7 +151,7 @@ padding:20px;
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1523986371872-9d3ba2e2f3d6?auto=format&fit=crop&w=600&q=80">
+<img src="https://images.unsplash.com/photo-1523986371872-9d3ba2e2f3d6?w=600">
 <div class="info">
 <h3>Cappuccino</h3>
 <p class="price">Rs 180</p>
@@ -191,6 +163,8 @@ padding:20px;
 
 </section>
 
+<!-- Tea -->
+
 <section id="tea">
 
 <h2>Tea</h2>
@@ -198,7 +172,7 @@ padding:20px;
 <div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1518976024611-488483b1f8a8?auto=format&fit=crop&w=600&q=80">
+<img src="https://images.unsplash.com/photo-1518976024611-488483b1f8a8?w=600">
 <div class="info">
 <h3>Masala Tea</h3>
 <p class="price">Rs 100</p>
@@ -206,18 +180,11 @@ padding:20px;
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1511715280538-c0693c798e54?auto=format&fit=crop&w=600&q=80">
-<div class="info">
-<h3>Green Tea</h3>
-<p class="price">Rs 120</p>
-<button>Add to Cart</button>
-</div>
-</div>
-
 </div>
 
 </section>
+
+<!-- Snacks (ONLY 2 images) -->
 
 <section id="snacks">
 
@@ -226,7 +193,7 @@ padding:20px;
 <div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=80">
+<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=600">
 <div class="info">
 <h3>French Fries</h3>
 <p class="price">Rs 150</p>
@@ -235,7 +202,7 @@ padding:20px;
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80">
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600">
 <div class="info">
 <h3>Cheese Burger</h3>
 <p class="price">Rs 250</p>
@@ -243,106 +210,58 @@ padding:20px;
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1606755962774-8c7f9d22c979?auto=format&fit=crop&w=600&q=80">
-<div class="info">
-<h3>Veg Sandwich</h3>
-<p class="price">Rs 180</p>
-<button>Add to Cart</button>
 </div>
-</div>
+
+</section>
+
+<!-- Menu List -->
+
+<section id="menu">
+
+<h2>Restaurant Menu</h2>
+
+<div class="menu-list">
+
+<h3>Breakfast</h3>
+
+Pancake — Rs 220<br>
+Omelette & Toast — Rs 180<br>
+Breakfast Platter — Rs 350<br>
+
+<h3>Lunch</h3>
+
+Veg Fried Rice — Rs 280<br>
+Chicken Fried Rice — Rs 320<br>
+Chicken Momo — Rs 200<br>
+Veg Momo — Rs 180<br>
+
+<h3>Dinner</h3>
+
+Italian Pasta — Rs 420<br>
+Chicken Burger Combo — Rs 450<br>
+Grilled Chicken — Rs 520<br>
+
+<h3>Dessert</h3>
+
+Chocolate Cake — Rs 200<br>
+Ice Cream — Rs 150<br>
 
 </div>
 
 </section>
 
-<section id="meals">
+<footer>
 
-<h2>Chef Meals</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1516685018646-5490d779d43f?auto=format&fit=crop&w=600&q=80">
-<div class="info">
-<h3>Italian Pasta</h3>
-<p class="price">Rs 420</p>
-<button>Add to Cart</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1562967916-eb82221dfb54?auto=format&fit=crop&w=600&q=80">
-<div class="info">
-<h3>Breakfast Platter</h3>
-<p class="price">Rs 350</p>
-<button>Add to Cart</button>
-</div>
-</div>
-
-</div>
-
-</section>
-
-<section id="order">
-
-<h2>Order Online</h2>
-
-<form>
-
-<input type="text" placeholder="Name" required>
-
-<input type="email" placeholder="Email" required>
-
-<select>
-
-<option>Espresso</option>
-
-<option>Cappuccino</option>
-
-<option>French Fries</option>
-
-<option>Burger</option>
-
-</select>
-
-<input type="number" placeholder="Quantity">
-
-<textarea placeholder="Delivery Address"></textarea>
-
-<button>Place Order</button>
-
-</form>
-
-</section>
-
-<section>
-
-<h2>Location</h2>
-
-<iframe src="https://maps.google.com/maps?q=Butwal%20Nepal&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-
-</section>
-
-<div class="delivery">
-
-<h2>Fast Delivery</h2>
-
-<p>Delivery available across the city within 30 minutes.</p>
-
-</div>
-
-<footer id="contact">
-
-<h3>Contact</h3>
+<h3>City Cafe</h3>
 
 <p>Butwal, Nepal</p>
 
-<p>Phone: +977 9800000000</p>
+<p>Fast Delivery Available</p>
 
-<p>Email: cafe@email.com</p>
+<p>Phone: +977 9800000000</p>
 
 </footer>
 
 </body>
 </html>
+```
