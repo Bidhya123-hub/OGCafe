@@ -3,157 +3,345 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Citybest Café</title>
-<style>
-  body { font-family: Arial, sans-serif; margin:0; padding:0; }
-  header { background:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; color:white; text-align:center; padding:120px 20px; }
-  header h1 { font-size:3em; margin:0; animation: fadeInDown 1s ease forwards; }
-  header p { font-size:1.2em; animation: fadeInUp 1s ease forwards; }
-  nav { background:#333; padding:10px; text-align:center; position:sticky; top:0; z-index:1000; }
-  nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; transition:0.3s; }
-  nav a:hover { color:#ffcc00; }
-  section { padding:50px 20px; opacity:0; transform:translateY(30px); animation: fadeInUpSection 1s forwards; }
-  .menu-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; }
-  .menu-card { border:1px solid #ddd; padding:15px; border-radius:6px; transition:0.3s; }
-  .menu-card:hover { transform:scale(1.05); box-shadow:0 4px 10px rgba(0,0,0,0.2); }
-  .menu-card img { width:100%; border-radius:6px; }
-  .menu-card h3 { margin:10px 0 5px; }
-  .menu-card p { margin:5px 0; }
-  footer { background:#222; color:white; text-align:center; padding:30px 20px; }
-  form { max-width:500px; margin:auto; display:flex; flex-direction:column; gap:10px; }
-  input, textarea, select { padding:10px; border-radius:5px; border:1px solid #ccc; width:100%; }
-  button { padding:12px; border:none; background:#ff6600; color:white; font-weight:bold; cursor:pointer; border-radius:5px; transition:0.3s; }
-  button:hover { background:#e65c00; }
-  iframe { width:100%; height:300px; border:0; border-radius:10px; }
 
-  @keyframes fadeInDown { 0% {opacity:0; transform:translateY(-50px);} 100% {opacity:1; transform:translateY(0);} }
-  @keyframes fadeInUp { 0% {opacity:0; transform:translateY(50px);} 100% {opacity:1; transform:translateY(0);} }
-  @keyframes fadeInUpSection { 0% {opacity:0; transform:translateY(30px);} 100% {opacity:1; transform:translateY(0);} }
+<title>City Cafe</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#fafafa;
+}
+
+header{
+background:url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80") center/cover;
+color:white;
+text-align:center;
+padding:120px 20px;
+}
+
+header h1{
+font-size:48px;
+}
+
+nav{
+background:#222;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#ff9800;
+}
+
+section{
+padding:50px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.info{
+padding:15px;
+text-align:center;
+}
+
+.price{
+color:#e65100;
+font-weight:bold;
+}
+
+button{
+background:#ff6f00;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e65100;
+}
+
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+input,select,textarea{
+padding:10px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+iframe{
+width:100%;
+height:300px;
+border:0;
+border-radius:10px;
+}
+
+.delivery{
+background:#fff3e0;
+padding:40px;
+text-align:center;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
+}
+
 </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
 <header>
-  <h1>Citybest Café</h1>
-  <p>Best Coffee, Tea & Daily Specials in the City</p>
+
+<h1>City Cafe</h1>
+
+<p>Best Coffee • Tea • Snacks • Fast Delivery</p>
+
 </header>
 
-<!-- NAVIGATION -->
 <nav>
-  <a href="#coffee">Coffee</a>
-  <a href="#tea">Tea</a>
-  <a href="#specials">Daily Specials</a>
-  <a href="#chefs">Chef's Picks</a>
-  <a href="#order">Order Online</a>
-  <a href="#contact">Contact</a>
+
+<a href="#coffee">Coffee</a>
+
+<a href="#tea">Tea</a>
+
+<a href="#snacks">Snacks</a>
+
+<a href="#meals">Meals</a>
+
+<a href="#order">Order</a>
+
+<a href="#contact">Contact</a>
+
 </nav>
 
-<!-- COFFEE MENU -->
 <section id="coffee">
-  <h2>☕ Coffee Menu</h2>
-  <div class="menu-grid">
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Espresso">
-      <h3>Espresso</h3>
-      <p>Strong & bold shot</p>
-      <p><strong>₹120</strong></p>
-    </div>
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1523986371872-9d3ba2e2f3d6?auto=format&fit=crop&w=600&q=80" alt="Cappuccino">
-      <h3>Cappuccino</h3>
-      <p>Creamy & frothy</p>
-      <p><strong>₹180</strong></p>
-    </div>
-  </div>
+
+<h2>Coffee</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80">
+<div class="info">
+<h3>Espresso</h3>
+<p class="price">Rs 120</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1523986371872-9d3ba2e2f3d6?auto=format&fit=crop&w=600&q=80">
+<div class="info">
+<h3>Cappuccino</h3>
+<p class="price">Rs 180</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+</div>
+
 </section>
 
-<!-- TEA MENU -->
 <section id="tea">
-  <h2>🍵 Tea Selection</h2>
-  <div class="menu-grid">
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1518976024611-488483b1f8a8?auto=format&fit=crop&w=600&q=80" alt="Masala Tea">
-      <h3>Masala Tea</h3>
-      <p>Aromatic Indian tea</p>
-      <p><strong>₹110</strong></p>
-    </div>
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1511715280538-c0693c798e54?auto=format&fit=crop&w=600&q=80" alt="Green Tea">
-      <h3>Green Tea</h3>
-      <p>Healthy & refreshing</p>
-      <p><strong>₹130</strong></p>
-    </div>
-  </div>
+
+<h2>Tea</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1518976024611-488483b1f8a8?auto=format&fit=crop&w=600&q=80">
+<div class="info">
+<h3>Masala Tea</h3>
+<p class="price">Rs 100</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511715280538-c0693c798e54?auto=format&fit=crop&w=600&q=80">
+<div class="info">
+<h3>Green Tea</h3>
+<p class="price">Rs 120</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+</div>
+
 </section>
 
-<!-- DAILY SPECIALS -->
-<section id="specials">
-  <h2>⭐ Daily Specials</h2>
-  <div class="menu-grid">
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb54?auto=format&fit=crop&w=600&q=80" alt="Brunch Platter">
-      <h3>Brunch Platter</h3>
-      <p>Eggs, toast & sides</p>
-      <p><strong>₹350</strong></p>
-    </div>
-  </div>
+<section id="snacks">
+
+<h2>Snacks</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=80">
+<div class="info">
+<h3>French Fries</h3>
+<p class="price">Rs 150</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80">
+<div class="info">
+<h3>Cheese Burger</h3>
+<p class="price">Rs 250</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606755962774-8c7f9d22c979?auto=format&fit=crop&w=600&q=80">
+<div class="info">
+<h3>Veg Sandwich</h3>
+<p class="price">Rs 180</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+</div>
+
 </section>
 
-<!-- CHEF'S PICKS -->
-<section id="chefs">
-  <h2>🍴 Chef’s Best Picks</h2>
-  <div class="menu-grid">
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1516685018646-5490d779d43f?auto=format&fit=crop&w=600&q=80" alt="Signature Pasta">
-      <h3>Signature Pasta</h3>
-      <p>Rich creamy favorite</p>
-      <p><strong>₹420</strong></p>
-    </div>
-  </div>
+<section id="meals">
+
+<h2>Chef Meals</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1516685018646-5490d779d43f?auto=format&fit=crop&w=600&q=80">
+<div class="info">
+<h3>Italian Pasta</h3>
+<p class="price">Rs 420</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1562967916-eb82221dfb54?auto=format&fit=crop&w=600&q=80">
+<div class="info">
+<h3>Breakfast Platter</h3>
+<p class="price">Rs 350</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+</div>
+
 </section>
 
-<!-- ONLINE ORDER -->
 <section id="order">
-  <h2>🛒 Order Online</h2>
-  <form action="mailto:yourmail@example.com" method="post" enctype="text/plain">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
+<h2>Order Online</h2>
 
-    <label for="item">Select Item</label>
-    <select id="item" name="item">
-      <option>Espresso - ₹120</option>
-      <option>Cappuccino - ₹180</option>
-      <option>Brunch Platter - ₹350</option>
-      <option>Signature Pasta - ₹420</option>
-    </select>
+<form>
 
-    <label for="quantity">Quantity</label>
-    <input type="number" id="quantity" name="quantity" value="1" min="1">
+<input type="text" placeholder="Name" required>
 
-    <label for="address">Delivery Address</label>
-    <textarea id="address" name="address" rows="3" required></textarea>
+<input type="email" placeholder="Email" required>
 
-    <button type="submit">Place Order</button>
-  </form>
-  <p style="text-align:center; margin-top:10px; color:#555;">Fast delivery within city in 30 mins!</p>
+<select>
+
+<option>Espresso</option>
+
+<option>Cappuccino</option>
+
+<option>French Fries</option>
+
+<option>Burger</option>
+
+</select>
+
+<input type="number" placeholder="Quantity">
+
+<textarea placeholder="Delivery Address"></textarea>
+
+<button>Place Order</button>
+
+</form>
+
 </section>
 
-<!-- LOCATION MAP -->
-<section id="location">
-  <h2>📍 Our Location</h2>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.8231379710765!2d83.56376877508772!3d27.703262782794594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995969b91f1f0d1%3A0x1e3f5e82f745!2sButwal%2C%20Nepal!5e0!3m2!1sen!2sus!4v1688834023967!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+<section>
+
+<h2>Location</h2>
+
+<iframe src="https://maps.google.com/maps?q=Butwal%20Nepal&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
 </section>
 
-<!-- CONTACT -->
+<div class="delivery">
+
+<h2>Fast Delivery</h2>
+
+<p>Delivery available across the city within 30 minutes.</p>
+
+</div>
+
 <footer id="contact">
-  <h2>📞 Contact Us</h2>
-  <p>Email: contact@citybestcafe.com | Phone: +977-123-456789</p>
-  <p>Follow us: Instagram | Facebook</p>
-  <p>123 Café Street, Butwal, Nepal</p>
+
+<h3>Contact</h3>
+
+<p>Butwal, Nepal</p>
+
+<p>Phone: +977 9800000000</p>
+
+<p>Email: cafe@email.com</p>
+
 </footer>
 
 </body>
