@@ -64,11 +64,6 @@ background:white;
 border-radius:10px;
 overflow:hidden;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
 }
 
 .card img{
@@ -108,6 +103,25 @@ button:hover{
 background:#e65100;
 }
 
+.search-box{
+text-align:center;
+margin-bottom:30px;
+}
+
+.search-box input{
+padding:10px;
+width:300px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+iframe{
+width:100%;
+height:350px;
+border:0;
+border-radius:10px;
+}
+
 footer{
 background:#222;
 color:white;
@@ -128,12 +142,12 @@ margin-top:40px;
 
 <nav>
 <a href="#coffee">Coffee</a>
-<a href="#tea">Tea</a>
 <a href="#snacks">Snacks</a>
-<a href="#menu">Food Menu</a>
+<a href="#special">Daily Special</a>
+<a href="#chef">Chef Picks</a>
+<a href="#menu">Menu</a>
+<a href="#map">Location</a>
 </nav>
-
-<!-- Coffee -->
 
 <section id="coffee">
 
@@ -150,41 +164,9 @@ margin-top:40px;
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1523986371872-9d3ba2e2f3d6?w=600">
-<div class="info">
-<h3>Cappuccino</h3>
-<p class="price">Rs 180</p>
-<button>Add to Cart</button>
-</div>
-</div>
-
 </div>
 
 </section>
-
-<!-- Tea -->
-
-<section id="tea">
-
-<h2>Tea</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1518976024611-488483b1f8a8?w=600">
-<div class="info">
-<h3>Masala Tea</h3>
-<p class="price">Rs 100</p>
-<button>Add to Cart</button>
-</div>
-</div>
-
-</div>
-
-</section>
-
-<!-- Snacks (ONLY 2 images) -->
 
 <section id="snacks">
 
@@ -214,39 +196,73 @@ margin-top:40px;
 
 </section>
 
-<!-- Menu List -->
+<section id="special">
 
-<section id="menu">
-
-<h2>Restaurant Menu</h2>
+<h2>Today's Special Dish</h2>
 
 <div class="menu-list">
 
-<h3>Breakfast</h3>
-
-Pancake — Rs 220<br>
-Omelette & Toast — Rs 180<br>
-Breakfast Platter — Rs 350<br>
-
-<h3>Lunch</h3>
-
-Veg Fried Rice — Rs 280<br>
-Chicken Fried Rice — Rs 320<br>
-Chicken Momo — Rs 200<br>
-Veg Momo — Rs 180<br>
-
-<h3>Dinner</h3>
-
-Italian Pasta — Rs 420<br>
-Chicken Burger Combo — Rs 450<br>
-Grilled Chicken — Rs 520<br>
-
-<h3>Dessert</h3>
-
-Chocolate Cake — Rs 200<br>
-Ice Cream — Rs 150<br>
+<p class="food-item">Chef Special Chicken Pasta — Rs 420</p>
+<p class="food-item">Special Breakfast Combo — Rs 350</p>
+<p class="food-item">Fresh Fruit Pancake — Rs 250</p>
 
 </div>
+
+</section>
+
+<section id="chef">
+
+<h2>Chef's Picks</h2>
+
+<div class="menu-list">
+
+<p class="food-item">Signature Italian Pasta — Rs 420</p>
+<p class="food-item">Grilled Chicken with Herbs — Rs 520</p>
+<p class="food-item">Special Chicken Burger Combo — Rs 450</p>
+<p class="food-item">Veg Deluxe Sandwich — Rs 220</p>
+
+</div>
+
+</section>
+
+<section id="menu">
+
+<h2>Full Menu</h2>
+
+<div class="search-box">
+<input type="text" id="searchInput" onkeyup="searchFood()" placeholder="Search food or drink...">
+</div>
+
+<div class="menu-list">
+
+<p class="food-item">Espresso — Rs 120</p>
+<p class="food-item">Cappuccino — Rs 180</p>
+<p class="food-item">Latte — Rs 190</p>
+
+<p class="food-item">Masala Tea — Rs 100</p>
+<p class="food-item">Green Tea — Rs 120</p>
+
+<p class="food-item">Omelette & Toast — Rs 180</p>
+<p class="food-item">Pancake — Rs 220</p>
+
+<p class="food-item">Veg Fried Rice — Rs 280</p>
+<p class="food-item">Chicken Fried Rice — Rs 320</p>
+
+<p class="food-item">Chicken Momo — Rs 200</p>
+<p class="food-item">Italian Pasta — Rs 420</p>
+
+<p class="food-item">Chocolate Cake — Rs 200</p>
+<p class="food-item">Ice Cream — Rs 150</p>
+
+</div>
+
+</section>
+
+<section id="map">
+
+<h2>Our Location</h2>
+
+<iframe src="https://maps.google.com/maps?q=Butwal%20Nepal&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 
 </section>
 
@@ -261,6 +277,30 @@ Ice Cream — Rs 150<br>
 <p>Phone: +977 9800000000</p>
 
 </footer>
+
+<script>
+
+function searchFood(){
+
+let input=document.getElementById("searchInput").value.toLowerCase();
+
+let items=document.getElementsByClassName("food-item");
+
+for(let i=0;i<items.length;i++){
+
+let text=items[i].innerText.toLowerCase();
+
+if(text.includes(input)){
+items[i].style.display="";
+}else{
+items[i].style.display="none";
+}
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
